@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
-export const Add = ({ onAddTodo }) => {
+import { TodoContext } from './Context'
+
+const Add = () => {
+  const { onAddTodo } = useContext(TodoContext)
   const [title, setTitle] = useState('')
 
   return (
     <div>
       <input onChange={({ target: { value } }) => setTitle(value)} title="title" value={title} />
-      <button onClick={onAddTodo(title)}>Add</button>
+      <button disabled={!title} onClick={onAddTodo(title)}>
+        Add
+      </button>
     </div>
   )
 }

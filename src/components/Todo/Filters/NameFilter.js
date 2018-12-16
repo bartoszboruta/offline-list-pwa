@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const NameFilter = ({ onChangeNameFilter }) => {
+import { TodoContext } from '../Context'
+
+const NameFilter = () => {
+  const { onChangeNameFilter } = useContext(TodoContext)
+
   return (
     <div>
       <input onChange={onChangeNameFilter} />

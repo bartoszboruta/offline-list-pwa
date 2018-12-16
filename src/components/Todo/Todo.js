@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const Todo = ({ onRemoveTodo, onUpdateTodo, todo }) => {
+import { TodoContext } from './Context'
+
+const Todo = ({ todo }) => {
+  const { onRemoveTodo, onUpdateTodo } = useContext(TodoContext)
   const { done, title, updatedAt } = todo
 
   return (
     <div>
       <div>
-        <input checked={done} onChange={() => onUpdateTodo(todo)} type="checkbox" />
+        <input checked={done} onChange={onUpdateTodo(todo)} type="checkbox" />
         <span>{title}</span>
-        <button onClick={() => onRemoveTodo(todo)} type="button">
+        <button onClick={onRemoveTodo(todo)} type="button">
           Delete
         </button>
       </div>
