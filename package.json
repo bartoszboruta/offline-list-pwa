@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "dexie": "^2.0.4",
+    "react": "v16.7.0-alpha",
+    "react-dom": "v16.7.0-alpha",
     "react-scripts": "2.1.1"
+  },
+  "devDependencies": {
+    "@selleo/eslint-config-react": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

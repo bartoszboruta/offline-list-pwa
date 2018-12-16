@@ -1,0 +1,24 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["@selleo/react", "prettier/react"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-debugger": "off",
+    "no-restricted-globals": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["info", "error"]
+      }
+    ]
+  },
+  "globals": {
+    "clients": true,
+    "skipWaiting": true
+  }
+}
