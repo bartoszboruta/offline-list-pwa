@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 
 import Add from './Add'
-import Filters from './Filters'
+import NameFilter from './Filters/NameFilter'
+import Header from '../Header'
 import List from './List'
 import db from '../../utils/db'
 import { TodoContext } from './Context'
 
 class Container extends Component {
   state = {
-    nameFilter: '',
     active: 0,
     done: 0,
     filteredTodos: [],
+    nameFilter: localStorage.getItem('nameFilter') || '',
+    showAddField: localStorage.getItem('showAddField') === 'true' ? true : false,
+    showNameFilter: localStorage.getItem('showNameFilter') === 'true' ? true : false,
     todos: [],
   }
 
@@ -24,27 +27,21 @@ class Container extends Component {
       .table('todos')
       .toArray()
       .then(todos => {
-        this.setState({ todos }, () => {
-          this._updateCounter()
-          this._applyFilters()
-        })
+        this.setState(
+          {
+            todos: todos.sort((prev, next) => {
+              return next.id - prev.id
+            }),
+          },
+          () => {
+            this._updateCounter()
+            this._applyFilters()
+          },
+        )
       })
   }
 
-  _applyFilters = () => {
-    const { nameFilter, todos } = this.state
-    const filteredTodos = todos.filter(({ title }) => {
-      return title.toLowerCase().includes(nameFilter.toLowerCase())
-    })
-
-    this.setState({ filteredTodos })
-  }
-
-  _handleNameFilterChange = ({ target: { value } }) => {
-    this.setState({ nameFilter: value }, this._applyFilters)
-  }
-
-  _handleAddTodo = title => () => {
+  _handleAddTodo = title => {
     const todo = {
       createdAt: new Date(),
       done: false,
@@ -72,6 +69,38 @@ class Container extends Component {
       .then(this._getTodos)
   }
 
+  _applyFilters = () => {
+    const { nameFilter, todos } = this.state
+    const filteredTodos = todos.filter(({ title }) => {
+      return title.toLowerCase().includes(nameFilter.toLowerCase())
+    })
+
+    this.setState({ filteredTodos })
+  }
+
+  _handleNameFilterChange = ({ target: { value } }) => {
+    this.setState({ nameFilter: value }, () => {
+      localStorage.setItem('nameFilter', value)
+      this._applyFilters()
+    })
+  }
+
+  _handleToggle = toggleName => {
+    if (!toggleName) {
+      return
+    }
+
+    const _toggleValue = this.state[toggleName]
+
+    this.setState({ [toggleName]: !_toggleValue }, () => {
+      localStorage.setItem(toggleName, !_toggleValue)
+
+      if (toggleName === 'showNameFilter' && _toggleValue) {
+        this._handleNameFilterChange({ target: { value: '' } })
+      }
+    })
+  }
+
   _updateCounter = () => {
     const { filteredTodos } = this.state
     const active = filteredTodos.filter(todo => !todo.done).length
@@ -81,22 +110,29 @@ class Container extends Component {
   }
 
   render() {
-    const { todos, filteredTodos } = this.state
+    const { nameFilter, todos, filteredTodos, showNameFilter, showAddField } = this.state
 
     return (
       <TodoContext.Provider
         value={{
           filteredTodos,
+          nameFilter,
           onAddTodo: this._handleAddTodo,
           onChangeNameFilter: this._handleNameFilterChange,
           onRemoveTodo: this._handleRemoveTodo,
+          onToggle: this._handleToggle,
           onUpdateTodo: this._handleUpdateTodo,
+          showAddField,
+          showNameFilter,
           todos,
         }}
       >
-        <Add />
-        <Filters />
-        <List />
+        <Header />
+        <div className="container">
+          {showNameFilter && <NameFilter />}
+          {showAddField && <Add />}
+          <List />
+        </div>
       </TodoContext.Provider>
     )
   }

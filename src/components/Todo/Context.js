@@ -8,6 +8,9 @@ export const TodoContext = React.createContext({
   onAddTodo: () => {},
   onChangeNameFilter: () => {},
   onRemoveTodo: () => {},
+  onToggle: () => {},
   onUpdateTodo: () => {},
+  showAddField: '',
+  showNameFilter: '',
   todos: [],
 })

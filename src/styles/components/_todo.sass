@@ -1,0 +1,44 @@
+.todo
+  align-items: center
+  border-bottom: 1px solid $color-gray-light
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  margin: 5px 0 5px 0
+  padding: 5px 0 5px 0
+  width: 100%
+
+  &__date
+    color: $color-gray
+    font-size: $font-size-xs
+
+  &__container
+    align-items: center
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+
+  &__remove
+    font-weight: 1.5rem
+    color: $color-light-danger
+
+  &__title
+    margin: 0 10px 0 10px
+    &.checked
+      color: $color-gray
+      text-decoration: line-through
+    
+  &__input
+    
+    .label__checkbox 
+      display: none
+    i
+      color: $color-active
+
+      &.checked
+        color: $color-gray
+
+
+    
+      

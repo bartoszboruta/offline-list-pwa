@@ -6,7 +6,7 @@ import { TodoContext } from './Context'
 const List = () => {
   const { filteredTodos } = useContext(TodoContext)
 
-  return filteredTodos.map(todo => <Todo key={todo.id} todo={todo} />)
+  return <div className="list">{filteredTodos.map(todo => <Todo key={todo.id} todo={todo} />)}</div>
 }
 
 export default List

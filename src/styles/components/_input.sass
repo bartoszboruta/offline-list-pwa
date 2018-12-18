@@ -1,0 +1,94 @@
+.group
+  position: relative
+  margin-bottom: $m / 2
+
+  input
+    font-size: $font-size-sm
+    padding: 10px 0 10px 0
+    display: block
+    width: 300px
+    border: none
+    border-bottom: 1px solid $color-gray
+    &:focus
+      outline: none
+
+  label
+    color: #999
+    font-size: $font-size-sm
+    font-weight: normal
+    position: absolute
+    pointer-events: none
+    left: 5px
+    top: 10px
+    transition: 0.2s ease all
+    -moz-transition: 0.2s ease all
+    -webkit-transition: 0.2s ease all
+
+  input
+    &:focus ~ label, &:valid ~ label
+      top: -20px
+      font-size: $font-size-sm
+      color: $color-active
+
+  .bar
+    position: relative
+    display: block
+    width: 300px
+    &:before, &:after
+      content: ''
+      height: 2px
+      width: 0
+      bottom: 1px
+      position: absolute
+      background: $color-active
+      transition: 0.2s ease all
+      -moz-transition: 0.2s ease all
+      -webkit-transition: 0.2s ease all
+    &:before
+      left: 50%
+    &:after
+      right: 50%
+
+  input:focus ~ .bar
+    &:before, &:after
+      width: 50%
+
+    .highlight
+      position: absolute
+      height: 60%
+      width: 150px
+      top: 25%
+      left: 0
+      pointer-events: none
+      opacity: 0.5
+
+    input:focus ~ .highlight
+      -webkit-animation: inputHighlighter 0.3s ease
+      -moz-animation: inputHighlighter 0.3s ease
+      animation: inputHighlighter 0.3s ease
+
+/* ANIMATIONS ================
+@-webkit-keyframes inputHighlighter
+  from
+    background: $color-active
+
+  to
+    width: 0
+    background: transparent
+
+@-moz-keyframes inputHighlighter
+  from
+    background: $color-active
+
+  to
+    width: 0
+    background: transparent
+
+
+@keyframes inputHighlighter
+  from
+    background: $color-active
+
+  to
+    width: 0
+    background: transparent
