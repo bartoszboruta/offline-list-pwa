@@ -129,8 +129,10 @@ class Container extends Component {
       >
         <Header />
         <div className="container">
-          {showNameFilter && <NameFilter />}
-          {showAddField && <Add />}
+          <div>
+            {showNameFilter && <NameFilter />}
+            {showAddField && <Add />}
+          </div>
           <List />
         </div>
       </TodoContext.Provider>
