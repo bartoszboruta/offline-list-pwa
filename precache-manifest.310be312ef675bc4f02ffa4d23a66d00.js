@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/css/1.7e19653c.chunk.css"
   },
   {
-    "revision": "21f5a0c18c2b1bd719d45fcf5f2d4ede",
+    "revision": "1b4d7f05b55a5faf2e3e97bf98c3198a",
     "url": "/offline-list-pwa/index.html"
   }
 ];
