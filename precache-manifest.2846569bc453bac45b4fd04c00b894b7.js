@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "1eaa4b132706d877dea4",
-    "url": "/offline-list-pwa/static/css/main.b3696585.chunk.css"
+    "revision": "fa549213251ce12cc7e2",
+    "url": "/offline-list-pwa/static/css/main.38d8ff33.chunk.css"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/js/runtime~main.70e76f57.js"
   },
   {
-    "revision": "1eaa4b132706d877dea4",
-    "url": "/offline-list-pwa/static/js/main.1eaa4b13.chunk.js"
+    "revision": "fa549213251ce12cc7e2",
+    "url": "/offline-list-pwa/static/js/main.fa549213.chunk.js"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/css/1.7e19653c.chunk.css"
   },
   {
-    "revision": "1b4d7f05b55a5faf2e3e97bf98c3198a",
+    "revision": "a1058ea34421b66ab042daf251682b83",
     "url": "/offline-list-pwa/index.html"
   }
 ];
