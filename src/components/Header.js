@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import { TodoContext } from './Todo/Context'
 
 const Header = () => {
-  const { showNameFilter, showAddField, onToggle } = useContext(TodoContext)
+  const { active, filteredTodos, onToggle, showNameFilter, showAddField } = useContext(TodoContext)
   const searchClassName = classnames('fa fa-search icon', {
     active: showNameFilter,
   })
@@ -15,7 +15,12 @@ const Header = () => {
   return (
     <div className="header">
       <i className={searchClassName} onClick={() => onToggle('showNameFilter')} />
-      <i>Tasks</i>
+      <div className="header__container">
+        <i>Tasks</i>
+        <i className="counter">
+          {active} / {filteredTodos.length}
+        </i>
+      </div>
       <i className={addClassName} onClick={() => onToggle('showAddField')} />
     </div>
   )

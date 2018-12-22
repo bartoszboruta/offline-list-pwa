@@ -20,8 +20,8 @@ const Todo = ({ todo }) => {
 
   const dateClassName = classnames('todo__date', {
     expired: expireDays < 0 && !done,
-    today: expireDays === 0,
-    tomorrow: expireDays === 1,
+    today: expireDays === 0 && !done,
+    tomorrow: expireDays === 1 && !done,
   })
 
   return (
