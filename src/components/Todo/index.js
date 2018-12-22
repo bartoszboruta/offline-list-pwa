@@ -34,17 +34,18 @@ class Container extends Component {
             }),
           },
           () => {
-            this._updateCounter()
+            // this._updateCounter()
             this._applyFilters()
           },
         )
       })
   }
 
-  _handleAddTodo = title => {
+  _handleAddTodo = ({ expireDate, title }) => {
     const todo = {
       createdAt: new Date(),
       done: false,
+      expireDate,
       updatedAt: new Date(),
       title,
     }
@@ -56,6 +57,7 @@ class Container extends Component {
   }
 
   _handleUpdateTodo = ({ done, id }) => () => {
+    console.log(done, id)
     db
       .table('todos')
       .update(id, { done: !done, updatedAt: new Date() })

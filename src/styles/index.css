@@ -352,6 +352,7 @@ body, html {
   position: relative;
   margin-bottom: 11.25px; }
   .group input {
+    background: transparent;
     font-size: 13px;
     padding: 10px 0 10px 0;
     display: block;
@@ -473,11 +474,17 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   margin: 5px 0 5px 0;
-  padding: 5px 0 5px 0;
+  padding: 5px 0 15px 0;
   width: 100%; }
   .todo__date {
     color: #cfd2d3;
     font-size: 11px; }
+    .todo__date.expired {
+      color: #e62a2a; }
+    .todo__date.today {
+      color: #ffca83; }
+    .todo__date.tomorrow {
+      color: #5bc0de; }
   .todo__container {
     align-items: center;
     display: flex;

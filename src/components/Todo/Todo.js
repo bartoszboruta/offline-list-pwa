@@ -2,10 +2,14 @@ import React, { useContext } from 'react'
 import classnames from 'classnames'
 
 import { TodoContext } from './Context'
+import { dateDiffInDays, getExpireDateText } from '../../utils/parsers/date'
 
 const Todo = ({ todo }) => {
   const { onRemoveTodo, onUpdateTodo } = useContext(TodoContext)
-  const { done, title, updatedAt } = todo
+  const { done, expireDate, title } = todo
+  const expireDays = dateDiffInDays(expireDate)
+  const expireText = getExpireDateText(expireDays)
+
   const titleClassName = classnames('todo__title', {
     checked: done,
   })
@@ -14,9 +18,15 @@ const Todo = ({ todo }) => {
     checked: done,
   })
 
+  const dateClassName = classnames('todo__date', {
+    expired: expireDays < 0 && !done,
+    today: expireDays === 0,
+    tomorrow: expireDays === 1,
+  })
+
   return (
     <div className="todo">
-      <div className="todo__date">{new Date(updatedAt).toLocaleDateString()}</div>
+      <div className={dateClassName}>{expireText}</div>
       <div className="todo__container">
         <i className="todo__remove fa fa-minus-circle" onClick={onRemoveTodo(todo)} />
         <div className={titleClassName}>{title}</div>
