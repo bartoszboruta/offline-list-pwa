@@ -57,7 +57,6 @@ class Container extends Component {
   }
 
   _handleUpdateTodo = ({ done, id }) => () => {
-    console.log(done, id)
     db
       .table('todos')
       .update(id, { done: !done, updatedAt: new Date() })
