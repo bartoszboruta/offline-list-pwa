@@ -353,7 +353,7 @@ body, html {
     flex-direction: column; }
     .header__container .counter {
       color: #cfd2d3;
-      font-size: 13px; }
+      font-size: 11px; }
 
 .group {
   position: relative;
@@ -481,7 +481,8 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   margin: 5px 0 5px 0;
-  padding: 5px 0 15px 0;
+  padding: 5px 0 10px 0;
+  text-align: center;
   width: 100%; }
   .todo__date {
     color: #cfd2d3;

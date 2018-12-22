@@ -7,7 +7,9 @@ const Add = () => {
   const [title, setTitle] = useState('')
   const [expireDate, setExpireDate] = useState('')
 
-  const submit = () => {
+  const submit = event => {
+    event.preventDefault()
+
     setTitle('')
     setExpireDate('')
     onAddTodo({ expireDate, title })
@@ -15,31 +17,33 @@ const Add = () => {
 
   return (
     <div className="add">
-      <div className="group">
-        <input
-          onChange={({ target: { value } }) => setTitle(value)}
-          placeholder="New task"
-          title="title"
-          value={title}
-        />
-        <span className="highlight" />
-        <span className="bar" />
-      </div>
-      <div>
+      <form>
         <div className="group">
           <input
-            onChange={({ target: { value } }) => setExpireDate(value)}
-            type="date"
-            value={expireDate}
+            onChange={({ target: { value } }) => setTitle(value)}
+            placeholder="New task"
+            title="title"
+            value={title}
           />
           <span className="highlight" />
           <span className="bar" />
         </div>
-      </div>
+        <div>
+          <div className="group">
+            <input
+              onChange={({ target: { value } }) => setExpireDate(value)}
+              type="date"
+              value={expireDate}
+            />
+            <span className="highlight" />
+            <span className="bar" />
+          </div>
+        </div>
 
-      <button className="btn" disabled={!title} onClick={submit}>
-        Add
-      </button>
+        <button className="btn" disabled={!title} onClick={submit} type="submit">
+          Add
+        </button>
+      </form>
     </div>
   )
 }
