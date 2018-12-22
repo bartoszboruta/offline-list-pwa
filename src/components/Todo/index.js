@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 
 import Add from './Add'
 import NameFilter from './Filters/NameFilter'
 import Header from '../Header'
-import List from './List'
 import db from '../../utils/db'
 import { TodoContext } from './Context'
+
+const List = lazy(() => import('./List'))
 
 class Container extends Component {
   state = {
@@ -34,7 +35,6 @@ class Container extends Component {
             }),
           },
           () => {
-            // this._updateCounter()
             this._applyFilters()
           },
         )
@@ -76,7 +76,7 @@ class Container extends Component {
       return title.toLowerCase().includes(nameFilter.toLowerCase())
     })
 
-    this.setState({ filteredTodos })
+    this.setState({ filteredTodos }, this._updateCounter)
   }
 
   _handleNameFilterChange = ({ target: { value } }) => {
@@ -105,17 +105,17 @@ class Container extends Component {
   _updateCounter = () => {
     const { filteredTodos } = this.state
     const active = filteredTodos.filter(todo => !todo.done).length
-    const done = filteredTodos.filter(todo => todo.done).length
 
-    this.setState({ active, done })
+    this.setState({ active })
   }
 
   render() {
-    const { nameFilter, todos, filteredTodos, showNameFilter, showAddField } = this.state
+    const { active, nameFilter, todos, filteredTodos, showNameFilter, showAddField } = this.state
 
     return (
       <TodoContext.Provider
         value={{
+          active,
           filteredTodos,
           nameFilter,
           onAddTodo: this._handleAddTodo,
@@ -134,7 +134,9 @@ class Container extends Component {
             {showNameFilter && <NameFilter />}
             {showAddField && <Add />}
           </div>
-          <List />
+          <Suspense fallback={<div>Loading...</div>}>
+            <List />
+          </Suspense>
         </div>
       </TodoContext.Provider>
     )
