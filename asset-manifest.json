@@ -1,7 +1,7 @@
 {
-  "main.css": "/offline-list-pwa/static/css/main.c52f8014.chunk.css",
-  "main.js": "/offline-list-pwa/static/js/main.464e2fd3.chunk.js",
-  "main.js.map": "/offline-list-pwa/static/js/main.464e2fd3.chunk.js.map",
+  "main.css": "/offline-list-pwa/static/css/main.5dfc2fb3.chunk.css",
+  "main.js": "/offline-list-pwa/static/js/main.0c072183.chunk.js",
+  "main.js.map": "/offline-list-pwa/static/js/main.0c072183.chunk.js.map",
   "static/js/1.899f3e6a.chunk.js": "/offline-list-pwa/static/js/1.899f3e6a.chunk.js",
   "static/js/1.899f3e6a.chunk.js.map": "/offline-list-pwa/static/js/1.899f3e6a.chunk.js.map",
   "static/css/2.a138217a.chunk.css": "/offline-list-pwa/static/css/2.a138217a.chunk.css",
@@ -10,9 +10,9 @@
   "runtime~main.js": "/offline-list-pwa/static/js/runtime~main.66dbb729.js",
   "runtime~main.js.map": "/offline-list-pwa/static/js/runtime~main.66dbb729.js.map",
   "static/media/font-awesome.min.css": "/offline-list-pwa/static/media/fontawesome-webfont.fee66e71.woff",
+  "static/css/main.5dfc2fb3.chunk.css.map": "/offline-list-pwa/static/css/main.5dfc2fb3.chunk.css.map",
   "static/css/2.a138217a.chunk.css.map": "/offline-list-pwa/static/css/2.a138217a.chunk.css.map",
-  "static/css/main.c52f8014.chunk.css.map": "/offline-list-pwa/static/css/main.c52f8014.chunk.css.map",
   "index.html": "/offline-list-pwa/index.html",
-  "precache-manifest.f23bf83138ed159e471b8d8970a3d5df.js": "/offline-list-pwa/precache-manifest.f23bf83138ed159e471b8d8970a3d5df.js",
+  "precache-manifest.91c854b5418c88c9816c73673b80e462.js": "/offline-list-pwa/precache-manifest.91c854b5418c88c9816c73673b80e462.js",
   "service-worker.js": "/offline-list-pwa/service-worker.js"
 }

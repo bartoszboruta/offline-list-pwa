@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "464e2fd34feebbed6302",
-    "url": "/offline-list-pwa/static/css/main.c52f8014.chunk.css"
+    "revision": "0c072183f07adb98d722",
+    "url": "/offline-list-pwa/static/css/main.5dfc2fb3.chunk.css"
   },
   {
     "revision": "899f3e6a88e6c3a09fb9",
@@ -24,27 +24,27 @@ self.__precacheManifest = [
     "url": "/offline-list-pwa/static/js/runtime~main.66dbb729.js"
   },
   {
-    "revision": "464e2fd34feebbed6302",
-    "url": "/offline-list-pwa/static/js/main.464e2fd3.chunk.js"
+    "revision": "0c072183f07adb98d722",
+    "url": "/offline-list-pwa/static/js/main.0c072183.chunk.js"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/offline-list-pwa/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/offline-list-pwa/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/offline-list-pwa/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/offline-list-pwa/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "e6b57c978999a6fab562",
     "url": "/offline-list-pwa/static/css/2.a138217a.chunk.css"
   },
   {
-    "revision": "82bbcbf5a9c04c1adea1fe08164185ba",
+    "revision": "9b0fa47516fa3f82060021f57be4d692",
     "url": "/offline-list-pwa/index.html"
   }
 ];
