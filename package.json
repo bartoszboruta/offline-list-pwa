@@ -2,18 +2,16 @@
   "name": "offline-list-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bartoszboruta.github.io/offline-list-pwa/",
   "dependencies": {
     "classnames": "^2.2.6",
     "dexie": "^2.0.4",
     "font-awesome": "^4.7.0",
-    "react": "v16.7.0-alpha",
-    "react-dom": "v16.7.0-alpha",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-scripts": "2.1.1"
   },
   "devDependencies": {
     "@selleo/eslint-config-react": "^0.4.0",
-    "gh-pages": "^1.6.0",
     "node-sass-chokidar": "^0.0.3"
   },
   "scripts": {
@@ -21,9 +19,7 @@
     "build": "react-scripts build",
     "build-css": "node-sass-chokidar src/styles/ -o src/styles/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "pre-deploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
